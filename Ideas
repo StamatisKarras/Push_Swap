@@ -1,0 +1,3 @@
+Use radix sort and push the numbers back and forth in the stacks
+Stack b wiill be and array of pointers that point to int arrays(That is so that I can story multiple numbers in each "cell")
+Send the numbers on their corresponding cell in b and when done send them back to A.
