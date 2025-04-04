@@ -5,7 +5,11 @@ FLAGS = -Wall -Wextra -Werror -g
 LIBFT_A = ./Custom_Libft/libft.a
 LIB_DIR = ./Custom_Libft/
 
-SRC = push_swap.c
+SRC = push_swap.c \
+	  checks.c \
+	  create_stacks.c \
+	  free.c \
+	  sorting.c
 OBJ = $(SRC:.c=.o)
 
 .SILENT:
