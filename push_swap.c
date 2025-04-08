@@ -12,16 +12,15 @@
 
 #include "push.h"
 
-/*int	*push_swap(t_stacks	*stacks)
+int	*push_swap(t_stacks	*stacks)
 {
 
-}*/
+}
 
 int	main(int argc, char *argv[])
 {
 	t_stacks	stacks;
 	int			*copy;
-	int			i;
 
 	stacks.size = argc - 1;
 	if(argc < 2)
@@ -33,5 +32,8 @@ int	main(int argc, char *argv[])
 	stacks.stacka = create_stacka(argv + 1, stacks.size);
 	is_sorted(&stacks);
 	copy = buble_sort(copy_stack(&stacks), stacks.size);
+	convert_to_order(&stacks, copy);
+	stacks.stackb = create_stackb(&stacks);
+	push_swap(&stacks);
 	return (0);
 }

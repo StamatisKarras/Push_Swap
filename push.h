@@ -16,8 +16,10 @@ void	check(char	**argv);
 void	free_and_exit_stacka_error(int *stacka);
 void	free_and_exit_stacka_sorted(int *stacka);
 void	is_sorted(t_stacks *stacks);
-int	*copy_stack(t_stacks *stacks);
-int	*buble_sort(int	*stack, int size);
+int		*copy_stack(t_stacks *stacks);
+int		*buble_sort(int	*stack, int size);
 int		binary_search(int *stack, int n, int size);
+void	convert_to_order(t_stacks *stacks, int *buble);
+int		*create_stackb(t_stacks *stacks);
 
 #endif

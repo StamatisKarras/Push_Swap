@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:31:40 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/04 09:32:33 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/08 10:29:11 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	free_and_exit_stacka_error(int *stacka)
 {
 	free(stacka);
-	ft_printf("Error Duplicate Detected\n");
+	ft_printf("Error\n");
 	exit(-1);
 }
 
