@@ -10,7 +10,8 @@ SRC = push_swap.c \
 	  create_stacks.c \
 	  free.c \
 	  sorting.c \
-	  convert.c
+	  convert.c \
+	  instructions.c
 OBJ = $(SRC:.c=.o)
 
 .SILENT:

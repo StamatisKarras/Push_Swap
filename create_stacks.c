@@ -6,22 +6,11 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:24:25 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/08 11:09:25 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/09 11:36:37 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
-
-
-int	*create_stackb(t_stacks *stacks)
-{
-	int	*stackb;
-
-	stackb = (int *) ft_calloc(stacks->size, sizeof(int));
-	if (!stackb)
-		free_and_exit_stacka_error(stacks->stacka);
-	return (stackb);
-}
 
 int *create_stacka(char **argv, int count)
 {

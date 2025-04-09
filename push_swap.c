@@ -12,10 +12,10 @@
 
 #include "push.h"
 
-int	*push_swap(t_stacks	*stacks)
-{
+//int	*push_swap(t_stacks	*stacks)
+//{
 
-}
+//}
 
 int	main(int argc, char *argv[])
 {
@@ -23,6 +23,7 @@ int	main(int argc, char *argv[])
 	int			*copy;
 
 	stacks.size = argc - 1;
+	stacks.sizeb = 0;
 	if(argc < 2)
 	{
 		ft_printf("Not enough arguments\n");
@@ -33,7 +34,6 @@ int	main(int argc, char *argv[])
 	is_sorted(&stacks);
 	copy = buble_sort(copy_stack(&stacks), stacks.size);
 	convert_to_order(&stacks, copy);
-	stacks.stackb = create_stackb(&stacks);
-	push_swap(&stacks);
+	stacks.stackb = (int *) ft_calloc(0, sizeof(int));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:22:23 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/04 09:50:33 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/09 10:29:49 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,5 @@ void	is_sorted(t_stacks *stacks)
 			return ;
 		i++;
 	}
-	free_and_exit_stacka_sorted(stacks->stacka);
+	free_and_exit_sorted(stacks);
 }
