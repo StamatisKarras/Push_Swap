@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:22:23 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/09 10:29:49 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/11 12:37:49 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	check(char	**argv)
 	}
 }
 
-void	is_sorted(t_stacks *stacks)
+int	is_sorted(t_stacks *stacks)
 {
 	int	i;
 
@@ -60,8 +60,8 @@ void	is_sorted(t_stacks *stacks)
 	while (i < stacks->size - 1)
 	{
 		if (stacks->stacka[i] > stacks->stacka[i + 1])
-			return ;
+			return (-1);
 		i++;
 	}
-	free_and_exit_sorted(stacks);
+	return (1);
 }
