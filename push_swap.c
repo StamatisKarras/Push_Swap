@@ -14,13 +14,13 @@
 
 void	push_swap(t_stacks	*stacks)
 {
-	int mask;
+	int	mask;
 	int	i;
 	int	sizea;
-	int sizeb;
+	int	sizeb;
 
 	mask = 1;
-	while(is_sorted(stacks) == -1)
+	while (is_sorted(stacks) == -1)
 	{
 		sizea = stacks->size;
 		i = 0;
@@ -34,11 +34,8 @@ void	push_swap(t_stacks	*stacks)
 		}
 		sizeb = stacks->sizeb;
 		i = 0;
-		while (i < sizeb)
-		{
+		while (i++ < sizeb)
 			pa(stacks);
-			i++;
-		}
 		mask = mask << 1;
 	}
 }
@@ -47,10 +44,11 @@ int	main(int argc, char *argv[])
 {
 	t_stacks	stacks;
 	int			*copy;
+	int			*buble;
 
 	stacks.size = argc - 1;
 	stacks.sizeb = 0;
-	if(argc < 2)
+	if (argc < 2)
 	{
 		ft_printf("Not enough arguments\n");
 		exit(-1);
@@ -59,7 +57,10 @@ int	main(int argc, char *argv[])
 	stacks.stacka = create_stacka(argv + 1, stacks.size);
 	if (is_sorted(&stacks) == 1)
 		free_and_exit_sorted(&stacks);
-	copy = buble_sort(copy_stack(&stacks), stacks.size);
+	buble = copy_stack(&stacks);
+	copy = buble_sort(buble, stacks.size);
+	if (!copy)
+		free_and_exit_stacka_error(stacks.stacka);
 	convert_to_order(&stacks, copy);
 	stacks.stackb = (int *) ft_calloc(0, sizeof(int));
 	push_swap(&stacks);

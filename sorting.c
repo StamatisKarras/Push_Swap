@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:34:09 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/11 14:13:05 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/14 11:13:36 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	*buble_sort(int	*stack, int size)
 	int	i;
 
 	ordered = -1;
-	while(ordered != 0)
+	while (ordered != 0)
 	{
-		i = 0;
+		i = 1;
 		ordered = 0;
 		while (i < size)
 		{
@@ -35,7 +35,7 @@ int	*buble_sort(int	*stack, int size)
 			i++;
 		}
 	}
-	return(stack);
+	return (stack);
 }
 
 int	*copy_stack(t_stacks *stacks)
@@ -52,5 +52,5 @@ int	*copy_stack(t_stacks *stacks)
 		copy[i] = stacks->stacka[i];
 		i++;
 	}
-	return(copy);
+	return (copy);
 }

@@ -6,13 +6,13 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:24:25 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/09 11:36:37 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/14 11:05:26 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push.h"
 
-int *create_stacka(char **argv, int count)
+int	*create_stacka(char **argv, int count)
 {
 	int	*array;
 	int	i;
@@ -20,9 +20,12 @@ int *create_stacka(char **argv, int count)
 
 	array = (int *) malloc(count * sizeof(int));
 	if (!array)
+	{
+		ft_printf("Error");
 		exit(-1);
+	}
 	i = 0;
-	while(argv[i])
+	while (argv[i])
 	{
 		array[i] = ft_atoi(argv[i]);
 		j = 1;
@@ -34,5 +37,5 @@ int *create_stacka(char **argv, int count)
 		}
 		i++;
 	}
-	return(array);
+	return (array);
 }

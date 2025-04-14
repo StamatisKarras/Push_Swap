@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:22:23 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/11 12:37:49 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/14 11:03:55 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_ifnum(char *arg)
 	res = ft_atoi(arg);
 	c_res = ft_itoa(res);
 	i = 0;
-	while(arg[i])
+	while (arg[i])
 	{
 		if (arg[i] != c_res[i])
 		{
@@ -37,7 +37,7 @@ int	check_ifnum(char *arg)
 void	check(char	**argv)
 {
 	int			i;
-	int 		res;
+	int			res;
 
 	i = 0;
 	while (argv[i])

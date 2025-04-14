@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 09:55:29 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/11 14:03:59 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/14 11:06:38 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,11 @@ void	pb(t_stacks *stacks)
 
 	temp = stacks->stacka[0];
 	stacks->stacka = remove_stack(stacks->stacka, &stacks->size);
-	//Handle the NULL returned;
+	if (!stacks->stacka)
+		free_and_exit_stacks_error(stacks);
 	stacks->stackb = add_stack(stacks->stackb, &stacks->sizeb, temp);
-	//Handle the NULL returned;
+	if (!stacks->stackb)
+		free_and_exit_stacks_error(stacks);
 	ft_printf("pb\n");
 }
 
@@ -30,9 +32,11 @@ void	pa(t_stacks *stacks)
 
 	temp = stacks->stackb[0];
 	stacks->stackb = remove_stack(stacks->stackb, &stacks->sizeb);
-	//Handle the NULL returned;
+	if (!stacks->stacka)
+		free_and_exit_stacks_error(stacks);
 	stacks->stacka = add_stack(stacks->stacka, &stacks->size, temp);
-	//Handle the NULL returned;
+	if (!stacks->stackb)
+		free_and_exit_stacks_error(stacks);
 	ft_printf("pa\n");
 }
 
@@ -48,14 +52,14 @@ int	*remove_stack(int *stack, int *size)
 		return (NULL);
 	i = 0;
 	j = 1;
-	while(i < *size)
+	while (i < *size)
 	{
 		new_src[i] = stack[j];
 		i++;
 		j++;
 	}
 	free(stack);
-	return(new_src);
+	return (new_src);
 }
 
 int	*add_stack(int *stack, int *size, int n)
@@ -71,14 +75,14 @@ int	*add_stack(int *stack, int *size, int n)
 	new[0] = n;
 	i = 1;
 	j = 0;
-	while(i < *size)
+	while (i < *size)
 	{
 		new[i] = stack[j];
 		i++;
 		j++;
 	}
 	free(stack);
-	return(new);
+	return (new);
 }
 
 void	ra(t_stacks *stacks)
@@ -92,7 +96,7 @@ void	ra(t_stacks *stacks)
 		free_and_exit_stacks_error(stacks);
 	i = 1;
 	j = 0;
-	while(i < stacks->size)
+	while (i < stacks->size)
 	{
 		new_stack[j] = stacks->stacka[i];
 		i++;
