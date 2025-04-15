@@ -40,11 +40,34 @@ void	push_swap(t_stacks	*stacks)
 	}
 }
 
+void	big_num(t_stacks *stacks)
+{
+	int			*copy;
+	int			*buble;
+
+	buble = copy_stack(stacks);
+	copy = buble_sort(buble, stacks->size);
+	if (!copy)
+		free_and_exit_stacka_error(stacks->stacka);
+	convert_to_order(stacks, copy);
+	push_swap(stacks);
+}
+
+void	small_num(t_stacks *stacks)
+{
+	if (stacks->size == 2)
+		sort_2(stacks);
+	else if (stacks->size == 3)
+		sort_3(stacks);
+	else if (stacks->size == 4)
+		sort_4(stacks);
+	//else if (stacks->size == 5)
+	//	sort_5();
+}
+
 int	main(int argc, char *argv[])
 {
 	t_stacks	stacks;
-	int			*copy;
-	int			*buble;
 
 	stacks.size = argc - 1;
 	stacks.sizeb = 0;
@@ -55,15 +78,13 @@ int	main(int argc, char *argv[])
 	}
 	check(argv + 1);
 	stacks.stacka = create_stacka(argv + 1, stacks.size);
+	stacks.stackb = (int *) ft_calloc(0, sizeof(int));
 	if (is_sorted(&stacks) == 1)
 		free_and_exit_sorted(&stacks);
-	buble = copy_stack(&stacks);
-	copy = buble_sort(buble, stacks.size);
-	if (!copy)
-		free_and_exit_stacka_error(stacks.stacka);
-	convert_to_order(&stacks, copy);
-	stacks.stackb = (int *) ft_calloc(0, sizeof(int));
-	push_swap(&stacks);
+	if (stacks.size <= 5)
+		small_num(&stacks);
+	else
+		big_num(&stacks);
 	free_and_exit_sorted(&stacks);
 	return (0);
 }

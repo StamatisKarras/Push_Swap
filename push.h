@@ -39,5 +39,14 @@ void	pb(t_stacks *stacks);
 void	pa(t_stacks *stacks);
 void	ra(t_stacks *stacks);
 int		is_sorted(t_stacks *stacks);
+void	big_num(t_stacks *stacks);
+void	small_num(t_stacks *stacks);
+void	sort_2(t_stacks *stacks);
+void	sa(t_stacks *stacks);
+void	sort_3(t_stacks *stacks);
+void	rra(t_stacks *stacks);
+void	sb(t_stacks *stacks);
+void	ss(t_stacks *stacks);
+void	sort_4(t_stacks	*stacks);
 
 #endif

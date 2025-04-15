@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 09:55:29 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/14 11:06:38 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/15 11:55:42 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,51 +40,6 @@ void	pa(t_stacks *stacks)
 	ft_printf("pa\n");
 }
 
-int	*remove_stack(int *stack, int *size)
-{
-	int	*new_src;
-	int	i;
-	int	j;
-
-	*size = *size - 1;
-	new_src = (int *) ft_calloc(*size, sizeof(int));
-	if (!new_src)
-		return (NULL);
-	i = 0;
-	j = 1;
-	while (i < *size)
-	{
-		new_src[i] = stack[j];
-		i++;
-		j++;
-	}
-	free(stack);
-	return (new_src);
-}
-
-int	*add_stack(int *stack, int *size, int n)
-{
-	int	*new;
-	int	i;
-	int	j;
-
-	*size = *size + 1;
-	new = (int *) ft_calloc(*size, sizeof(int));
-	if (!new)
-		return (NULL);
-	new[0] = n;
-	i = 1;
-	j = 0;
-	while (i < *size)
-	{
-		new[i] = stack[j];
-		i++;
-		j++;
-	}
-	free(stack);
-	return (new);
-}
-
 void	ra(t_stacks *stacks)
 {
 	int	*new_stack;
@@ -106,4 +61,40 @@ void	ra(t_stacks *stacks)
 	free(stacks->stacka);
 	stacks->stacka = new_stack;
 	ft_printf("ra\n");
+}
+
+void	sa(t_stacks *stacks)
+{
+	int	temp;
+
+	if (stacks->size > 1)
+	{
+		temp = stacks->stacka[1];
+		stacks->stacka[1] = stacks->stacka[0];
+		stacks->stacka[0] = temp;
+		ft_printf("sa\n");
+	}
+}
+
+void	rra(t_stacks *stacks)
+{
+	int	i;
+	int	j;
+	int	*new_arr;
+
+	i = 1;
+	j = 0;
+	new_arr = (int *) ft_calloc(stacks->size, sizeof(int));
+	if (!new_arr)
+		free_and_exit_stacks_error(stacks);
+	new_arr[0] = stacks->stacka[stacks->size - 1];
+	while (i < stacks->size)
+	{
+		new_arr[i] = stacks->stacka[j];
+		i++;
+		j++;
+	}
+	free(stacks->stacka);
+	stacks->stacka = new_arr;
+	ft_printf("rra\n");
 }

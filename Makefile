@@ -11,7 +11,9 @@ SRC = push_swap.c \
 	  free.c \
 	  sorting.c \
 	  convert.c \
-	  instructions.c
+	  instructions.c \
+	  small_num.c \
+	  instruction_helper.c
 OBJ = $(SRC:.c=.o)
 
 .SILENT:
