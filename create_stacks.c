@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:24:25 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/14 11:05:26 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/16 10:18:15 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	*create_stacka(char **argv, int count)
 	array = (int *) malloc(count * sizeof(int));
 	if (!array)
 	{
-		ft_printf("Error");
+		ft_printf("Error\n");
 		exit(-1);
 	}
 	i = 0;

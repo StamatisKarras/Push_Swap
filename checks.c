@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:22:23 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/14 11:03:55 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/16 10:25:57 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	check(char	**argv)
 		res = check_ifnum(argv[i]);
 		if (res == -1)
 		{
-			ft_printf("error\n");
+			write(2, "Error\n", 6);
 			exit(-1);
 		}
 		i++;

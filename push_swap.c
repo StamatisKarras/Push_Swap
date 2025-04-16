@@ -61,8 +61,8 @@ void	small_num(t_stacks *stacks)
 		sort_3(stacks);
 	else if (stacks->size == 4)
 		sort_4(stacks);
-	//else if (stacks->size == 5)
-	//	sort_5();
+	else if (stacks->size == 5)
+		sort_5(stacks);
 }
 
 int	main(int argc, char *argv[])

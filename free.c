@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:31:40 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/15 08:46:28 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/16 10:25:44 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	free_and_exit_stacka_error(int *stacka)
 {
 	free(stacka);
-	ft_printf("Error\n");
+	write(2, "Error\n", 6);
 	exit(-1);
 }
 
@@ -30,6 +30,6 @@ void	free_and_exit_stacks_error(t_stacks *stacks)
 {
 	free(stacks->stacka);
 	free(stacks->stackb);
-	ft_printf("Error");
+	write(2, "Error\n", 6);
 	exit(-1);
 }

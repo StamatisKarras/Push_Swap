@@ -48,5 +48,6 @@ void	rra(t_stacks *stacks);
 void	sb(t_stacks *stacks);
 void	ss(t_stacks *stacks);
 void	sort_4(t_stacks	*stacks);
+void	sort_5(t_stacks	*stacks);
 
 #endif
