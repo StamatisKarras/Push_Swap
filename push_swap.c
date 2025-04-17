@@ -72,10 +72,7 @@ int	main(int argc, char *argv[])
 	stacks.size = argc - 1;
 	stacks.sizeb = 0;
 	if (argc < 2)
-	{
-		ft_printf("Not enough arguments\n");
 		exit(-1);
-	}
 	check(argv + 1);
 	stacks.stacka = create_stacka(argv + 1, stacks.size);
 	stacks.stackb = (int *) ft_calloc(0, sizeof(int));
