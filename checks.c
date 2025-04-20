@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 09:22:23 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/17 18:26:36 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/20 17:00:22 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ int	check_ifnum(char *arg)
 	int		res;
 	char	*c_res;
 
+	if (ft_strncmp(arg, "", 1) == 0)
+	{
+		write(2, "Error\n", 6);
+		exit(-1);
+	}
 	res = ft_atoi(arg);
 	c_res = ft_itoa(res);
 	if (c_res == NULL)

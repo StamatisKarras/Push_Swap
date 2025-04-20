@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 09:55:29 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/16 10:25:12 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/20 17:08:02 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,34 @@
 void	pb(t_stacks *stacks)
 {
 	int	temp;
+	int	*check;
 
 	temp = stacks->stacka[0];
-	stacks->stacka = remove_stack(stacks->stacka, &stacks->size);
-	if (!stacks->stacka)
+	check = remove_stack(stacks->stacka, &stacks->size);
+	if (!check)
 		free_and_exit_stacks_error(stacks);
-	stacks->stackb = add_stack(stacks->stackb, &stacks->sizeb, temp);
-	if (!stacks->stackb)
+	stacks->stacka = check;
+	check = add_stack(stacks->stackb, &stacks->sizeb, temp);
+	if (!check)
 		free_and_exit_stacks_error(stacks);
+	stacks->stackb = check;
 	ft_printf("pb\n");
 }
 
 void	pa(t_stacks *stacks)
 {
 	int	temp;
+	int	*check;
 
 	temp = stacks->stackb[0];
-	stacks->stackb = remove_stack(stacks->stackb, &stacks->sizeb);
-	if (!stacks->stacka)
+	check = remove_stack(stacks->stackb, &stacks->sizeb);
+	if (!check)
 		free_and_exit_stacks_error(stacks);
-	stacks->stacka = add_stack(stacks->stacka, &stacks->size, temp);
-	if (!stacks->stackb)
+	stacks->stackb = check;
+	check = add_stack(stacks->stacka, &stacks->size, temp);
+	if (!check)
 		free_and_exit_stacks_error(stacks);
+	stacks->stacka = check;
 	ft_printf("pa\n");
 }
 
