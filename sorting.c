@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 10:34:09 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/14 11:31:58 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/21 09:41:38 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	*copy_stack(t_stacks *stacks)
 
 	copy = (int *) ft_calloc(stacks->size, sizeof(int));
 	if (!copy)
-		free_and_exit_stacka_error(stacks->stacka);
+		free_and_exit_stacks_error(stacks);
 	i = 0;
 	while (i < stacks->size)
 	{

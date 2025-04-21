@@ -6,7 +6,7 @@
 /*   By: skarras <skarras@student.hive.fi>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/15 08:33:16 by skarras           #+#    #+#             */
-/*   Updated: 2025/04/16 10:00:52 by skarras          ###   ########.fr       */
+/*   Updated: 2025/04/21 09:51:42 by skarras          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void	sort_4(t_stacks	*stacks)
 	copy = copy_stack(stacks);
 	buble = buble_sort(copy, stacks->size);
 	if (!buble)
-		free_and_exit_stacka_error(stacks->stacka);
+	{
+		free(copy);
+		free_and_exit_stacks_error(stacks);
+	}
 	convert_to_order(stacks, buble);
 	if (!stacks->stacka)
 		free_and_exit_stacks_error(stacks);
@@ -78,7 +81,10 @@ void	sort_5(t_stacks	*stacks)
 	copy = copy_stack(stacks);
 	buble = buble_sort(copy, stacks->size);
 	if (!buble)
-		free_and_exit_stacka_error(stacks->stacka);
+	{
+		free(copy);
+		free_and_exit_stacks_error(stacks);
+	}
 	convert_to_order(stacks, buble);
 	if (!stacks->stacka)
 		free_and_exit_stacks_error(stacks);

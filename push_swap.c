@@ -45,11 +45,14 @@ void	big_num(t_stacks *stacks)
 	int			*copy;
 	int			*buble;
 
-	buble = copy_stack(stacks);
-	copy = buble_sort(buble, stacks->size);
-	if (!copy)
-		free_and_exit_stacka_error(stacks->stacka);
-	convert_to_order(stacks, copy);
+	copy = copy_stack(stacks);
+	buble = buble_sort(copy, stacks->size);
+	if (!buble)
+	{
+		free(copy);
+		free_and_exit_stacks_error(stacks);
+	}
+	convert_to_order(stacks, buble);
 	push_swap(stacks);
 }
 
@@ -76,6 +79,8 @@ int	main(int argc, char *argv[])
 	check(argv + 1);
 	stacks.stacka = create_stacka(argv + 1, stacks.size);
 	stacks.stackb = (int *) ft_calloc(0, sizeof(int));
+	if (!stacks.stackb)
+		free_and_exit_stacks_error(&stacks);
 	if (is_sorted(&stacks) == 1)
 		free_and_exit_sorted(&stacks);
 	if (stacks.size <= 5)
